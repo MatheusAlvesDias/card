@@ -1,0 +1,38 @@
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.2rem 2rem;
+    background-color: #cb0e2c;
+    color: #dadada;
+    font-weight: bold;
+    border-bottom: 3px solid black;
+}
+
+.navbar ul {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    
+}
+
+.btn-home {
+    font-weight: bold;
+    text-decoration: none;
+    color: #dadada;
+    font-size: 1.5rem;
+    transition: .3s;
+}
+
+.btn-home:hover {
+    color: #2e7bc9;
+    text-shadow: 1px 1px;
+}
+
+
+.icon   {
+    font-size:6rem;
+    cursor: pointer;
+    color: #2c2725;
+}
+
