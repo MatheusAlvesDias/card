@@ -108,7 +108,7 @@ background-color: #7038f8;
 
 .card-image {
     min-height: 140px;
-    background-image: url('florest.png');
+    background-image: url('../../public/florest.png');
     background-size: cover;
     background-position: center;
     background-color: #dadada;
