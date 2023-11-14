@@ -1,4 +1,7 @@
-import './Pagination.css'
+import './pagination.css'
+
+
+
 import {AiFillCaretRight, AiFillCaretLeft} from 'react-icons/ai'
 const Pagination = (props) => {
 
