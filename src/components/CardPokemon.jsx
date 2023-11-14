@@ -2,13 +2,16 @@ import { useState, useEffect } from "react"
 import './CardPokemon.css'
 import {MdCatchingPokemon} from 'react-icons/md'
 
-const CardPokemon = ({ data }) => {
+const CardPokemon = ({ data, seePokemon }) => {
 
 
     const pokemonimage = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/${data.id}.gif`
 
+
+
+
     return (
-        <div className="card-pokemon" id={data.types[0]}>
+        <div className="card-pokemon" id={data.types[0]} >
             <div className="card-header">
             <span className="card-title">{data.name}</span>
             <span className="hp_image">hp <b>{data.stats[0].base}</b></span>
@@ -28,8 +31,9 @@ const CardPokemon = ({ data }) => {
                 </div>
                 <div className="actions">
                 <button className="pokeball"><MdCatchingPokemon/></button>
-                <button className="btn-card">Detalhes...</button>
+                <button className="btn-card" onClick={seePokemon}>Detalhes...</button>
                 </div>
+        
             </div>
         </div>
 

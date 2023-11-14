@@ -1,14 +1,16 @@
 import { BsSearch } from 'react-icons/bs'
 import './SearchForm.css'
+import { useState } from 'react'
 
-const SearchForm = () => {
+const SearchForm = (props) => {
+  const [search, setSearch] = useState("dito")
+
+
+
   return (
-    <div className='search-form'>
-        <form>
-            <input type="text"  name='search' className='search-text' placeholder='Pesquisar'/>
-        </form>
-        <button onClick={(e) => e.preventDefault}><BsSearch/></button>
-    </div>
+<div>
+
+</div>    
   )
 }
 

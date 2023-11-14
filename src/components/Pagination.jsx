@@ -1,4 +1,4 @@
-import React from 'react'
+import './Pagination.css'
 import {AiFillCaretRight, AiFillCaretLeft} from 'react-icons/ai'
 const Pagination = (props) => {
 
@@ -6,9 +6,9 @@ const Pagination = (props) => {
 
   return (
     <div className='pagination-container'>
-        <button onClick={onLeftClick}><AiFillCaretLeft/>Voltar</button>
-        <div>{page} de {totalPages}</div>
-        <button onClick={onRightClick}>Avançar<AiFillCaretRight/></button>
+        <button  className="btn-page back" onClick={onLeftClick}><AiFillCaretLeft/>Voltar</button>
+        <div className='center-page'>{page} de {totalPages}</div>
+        <button  className="btn-page next" onClick={onRightClick}>Avançar<AiFillCaretRight/></button>
         
     </div>
   )

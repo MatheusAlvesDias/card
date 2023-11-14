@@ -40,3 +40,23 @@
     box-shadow: inset -4px 4px 0 #222;
     font-size: 0.9rem;
 }
+
+
+@media screen  and (max-width: 320px) {
+
+    .search-form{
+        display: flex;
+         flex-direction: column;
+         justify-content: center;
+         align-items: center;
+         
+         gap: 1rem;
+
+    }
+  
+    .center-page{
+        display: flex;
+        flex-direction: column;
+    }
+
+}

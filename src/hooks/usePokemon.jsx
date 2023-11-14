@@ -1,18 +1,19 @@
-import React from 'react'
+
 import { useEffect, useState } from 'react'
 
 
-
-const UrlEndpoint = 'https://pokeapi.co/api/v2/pokemon/'
 const usePokemon = () => {
   const [pokemons, setPokemons] = useState([])
   const [totalPages, setTotalPages] = useState(0)
+  const [loading, setLoading] = useState(false)
   const [page, setPage] = useState(0)
  const itensPerPage = 25
 
 
 
   const fetchPokemon = async (url) => {
+
+    setLoading(true)
     const response = await fetch(url)
     const poke = await response.json()
     
@@ -24,6 +25,7 @@ const usePokemon = () => {
    
     return {
       id: poke.id,
+      imagem: poke.sprites.front_default,
       name: poke.name,
       abilites,
       stats,
@@ -52,19 +54,15 @@ const usePokemon = () => {
     const { next, newPokemon,  } = await getPokemons(itensPerPage, itensPerPage *page)
     
     setPokemons(newPokemon)
-
-
-
-
+    setLoading(false)
 
   }
-
   useEffect(() => {
 
     gettingPokemons()
 
   }, [page])
 
-  return { pokemons, setPage, totalPages, page }
+  return { pokemons, setPage, totalPages, page , loading, setLoading ,}
 }
 export default usePokemon

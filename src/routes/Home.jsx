@@ -1,17 +1,15 @@
-import React from 'react'
-import { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import SearchForm from '../components/SearchForm'
-import axios from 'axios'
 import CardPokemon from '../components/CardPokemon'
 import './Home.css'
 import usePokemon from '../hooks/usePokemon'
 import Pagination from '../components/Pagination'
+import Details from '../components/Details'
 
 
-const Home = (props) => {
+const Home = () => {
 
-    // const { page, totalPages, onLeftClick, onRightClick} = props
-    const { pokemons, setPage, page, totalPages } = usePokemon()
+    const { pokemons, setPage, page, totalPages, loading, setLoading } = usePokemon()
     const onLeftClickHandler = () => {
         if (page > 0) {
             setPage(page - 1)
@@ -22,30 +20,37 @@ const Home = (props) => {
             setPage(page + 1)
         }
     }
+    
+    const [ see, setSee ] = useState({ see: false, item: {} })
+    const seePokemon = (item) => setSee({ see: true, item })
+    const notSeePokemon = () => setSee({ see: false, item: {} })
 
+    return (
+        <div className='Home'>
+            <Details {...see} close={notSeePokemon} />
+            <SearchForm />
+            <div className='pokedex-header'>
+                <Pagination
+                    page={page + 1}
+                    totalPages={totalPages}
+                    onLeftClick={onLeftClickHandler}
+                    onRightClick={onRightClickHandler}
+                    se
+                />
+            </div>
 
-
-return (
-    <div className='Home'>
-        <SearchForm />
-        <div className='pokedex-header'>
-            <Pagination
-                page={page + 1}
-                totalPages={totalPages}
-                onLeftClick={onLeftClickHandler}
-                onRightClick={onRightClickHandler}
-                se
-
-            />
+            {loading ? (
+                <div className='loading'><span>Carregando...</span></div>) : (
+                <div className='card-container'>
+                    {pokemons.map((item) =>
+                    (<CardPokemon key={item.id} data={item} seePokemon={() => seePokemon(item)}/>
+                    ))}
+                </div>
+            )}
+           
 
         </div>
-        <div className='card-container'>
-            {pokemons.map((item) =>
-            (<CardPokemon key={item.id} data={item} />
-            ))}
-        </div>
-    </div>
-)
+    )
 }
 
 export default Home

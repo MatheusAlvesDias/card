@@ -1,0 +1,162 @@
+.modal-container {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    place-items: center;
+    transition: all 0.2s;
+    z-index: 1;
+  }
+  
+  .modal-body {
+   background-image: url('../../public/arena-poke.jpg');
+   background-size: cover;
+   background-position: center;
+    width: 40%;
+    min-width: 500px;
+    border-radius: 15px;
+    position: absolute;
+    padding: 1rem;
+    display: flex;
+    border:2px solid #333;
+  }
+  
+  .imagem-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center ;
+    justify-content: center;
+  }
+  
+  .imagen-detalle {
+    width: 150px;
+    }
+
+
+  .tag-type {
+
+    display: inline-block;
+    padding: .3rem .7rem;
+    border-radius: 5px;
+    font-weight: 500;
+    border: 1px solid #444;
+    margin: .5rem;
+    color: #4e0813;
+  }
+.tag-type::first-letter{
+  text-transform: uppercase;
+}
+
+
+  .tag {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+  }
+
+
+
+
+  
+  .data {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 1rem;
+    gap: 10px;
+    flex: 1;
+    backdrop-filter: blur(5px) saturate(59%);
+    -webkit-backdrop-filter: blur(5px) saturate(59%);
+    background-color: rgba(218, 218, 218, 0.36);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+  }
+  
+  .titulo {
+    display: inline-block;
+    margin: .5rem;
+    background-color: #dbdbdd;
+    padding: 4px 8px;
+    border-radius: 5px;
+    color: #333;
+    text-transform: lowercase;   
+    letter-spacing: 2px;
+    box-shadow: -2px 2px 5px 3px #2a3f4b;
+    border: 1px solid #444;
+  }
+  .titulo::first-letter {
+    text-transform: uppercase;
+  }
+
+  .titulo-seccion {
+    text-align: center;
+    font-weight: 600;
+    letter-spacing: 1px;
+    width: 2;
+    box-shadow: -1px 2px 4px 1px #222;
+    border-radius: 4px;
+
+  }
+  
+  .data section {
+    background-color: transparent
+  
+  }
+  
+  .stats {
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+  }
+  
+  .stats > section {
+    display: flex;
+    align-items: center;
+    text-transform: capitalize;
+  }
+  
+  .puntos {
+    border-bottom: 1px solid #444;
+    letter-spacing: 2px;
+    display: flex;
+    gap: 1rem;
+   font-size: 1rem;
+  }
+
+
+
+  
+  @media screen  and (max-width: 500px) {
+    
+
+    .modal-body{
+        width: 20%;
+        min-width: 400px;
+      }
+    }
+
+    
+  
+  @media screen  and (max-width: 320px) {
+    
+
+    .modal-body{
+        min-width: 300px;
+      }
+      .modal-container {
+        background-color: rgba(0, 0, 0, 0.5);
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        place-items: center;
+        transition: all 0.2s;
+        z-index: 1;
+      }
+      
+
+
+    }
