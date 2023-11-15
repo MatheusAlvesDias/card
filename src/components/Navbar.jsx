@@ -2,7 +2,7 @@ import { Link, NavLink } from "react-router-dom"
 import { SiPokemon } from 'react-icons/si'
 import './Navbar.css'
 import { BsSearch } from 'react-icons/bs'
-
+import './SearchForm.css'
 
 const Navbar = ({search, setSearch, findPokemon}) => {
 
