@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import SearchForm from '../components/SearchForm'
 import CardPokemon from '../components/CardPokemon'
 import './Home.css'
 import usePokemon from '../hooks/usePokemon'

@@ -11,7 +11,7 @@
   }
   
   .modal-body {
-   background-image: url('../../public/arena-poke.jpg');
+   background-image: url('/arena-poke.jpg');
    background-size: cover;
    background-position: center;
     width: 40%;
