@@ -15,3 +15,33 @@ body {
         linear-gradient(90deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%,transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%,transparent);
     background-size: 55px 55px;
 }
+
+
+.footer {
+  padding: 2rem 2rem;
+  background-color: #cb0e2c;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+  align-items: center;
+  border-top: 3px solid #333;
+  margin-top: 2rem;
+  
+}
+
+.footer-main{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .5rem;
+}
+
+.footer p {
+  letter-spacing: 1px;
+}
+
+#corpyright {
+  font-size: .8rem;
+  color: #ddd;
+}

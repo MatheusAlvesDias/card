@@ -74,7 +74,6 @@
   }
   
   .titulo {
-    display: inline-block;
     margin: .5rem;
     background-color: #dbdbdd;
     padding: 4px 8px;
@@ -84,10 +83,9 @@
     letter-spacing: 2px;
     box-shadow: -2px 2px 5px 3px #2a3f4b;
     border: 1px solid #444;
+    text-transform: capitalize;
   }
-  .titulo::first-letter {
-    text-transform: uppercase;
-  }
+
 
   .titulo-seccion {
     text-align: center;
@@ -107,15 +105,10 @@
   .stats {
     display: flex;
     flex-direction: column;
-
+    text-transform: capitalize;
     gap: 10px;
   }
-  
-  .stats > section {
-    display: flex;
-    align-items: center;
-    text-transform: capitalize;
-  }
+
   
   .puntos {
     border-bottom: 1px solid #444;
@@ -125,7 +118,9 @@
    font-size: 1rem;
   }
 
-
+.stats-number {
+ width: 22px;
+}
 
   
   @media screen  and (max-width: 500px) {

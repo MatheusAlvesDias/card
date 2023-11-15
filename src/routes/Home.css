@@ -8,3 +8,13 @@
     gap: 3rem;
     max-width: 1200px;
 }
+.home {
+    min-height: 4000px;
+}
+
+.loading{
+    text-align: center;
+    padding: 2rem;
+    margin: 2rem;
+    font-size: 2rem;
+}

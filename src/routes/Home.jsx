@@ -5,11 +5,26 @@ import './Home.css'
 import usePokemon from '../hooks/usePokemon'
 import Pagination from '../components/Pagination'
 import Details from '../components/Details'
+import Navbar from '../components/Navbar'
 
 
 const Home = () => {
+    const { pokemons, setPage, page, totalPages, loading, setLoading , searchPokemon } = usePokemon()
+    const [search, setSearch] = useState("")
+    const [ see, setSee ] = useState({ see: false, item: {} })
+    
+    
+    const seePokemon = (item) => setSee({ see: true, item })
+    const notSeePokemon = () => {
+        setSee({ see: false, item: {} })
+        setSearch("")
 
-    const { pokemons, setPage, page, totalPages, loading, setLoading } = usePokemon()
+    }
+
+    
+    
+    
+    
     const onLeftClickHandler = () => {
         if (page > 0) {
             setPage(page - 1)
@@ -21,14 +36,22 @@ const Home = () => {
         }
     }
     
-    const [ see, setSee ] = useState({ see: false, item: {} })
-    const seePokemon = (item) => setSee({ see: true, item })
-    const notSeePokemon = () => setSee({ see: false, item: {} })
+    const findPokemon =  async(e) => {
+        e.preventDefault()
+
+        const item = await searchPokemon(search)
+        if(!search) return
+
+        setSee({see: true, item})
+    }
+
 
     return (
-        <div className='Home'>
+        <> 
+        <Navbar search={search} setSearch={setSearch} findPokemon={findPokemon}/>
+        <div className='home'>
+            
             <Details {...see} close={notSeePokemon} />
-            <SearchForm />
             <div className='pokedex-header'>
                 <Pagination
                     page={page + 1}
@@ -47,9 +70,16 @@ const Home = () => {
                     ))}
                 </div>
             )}
-           
+            <Pagination
+                    page={page + 1}
+                    totalPages={totalPages}
+                    onLeftClick={onLeftClickHandler}
+                    onRightClick={onRightClickHandler}
+                    se
+                />
 
         </div>
+        </>
     )
 }
 

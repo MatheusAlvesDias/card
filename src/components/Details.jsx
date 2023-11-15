@@ -24,7 +24,7 @@ const Details = (props) => {
               <div className='stats'>
               {item.stats?.map((stat, index) => (
             <section key={index} className="puntos" >
-              <span>{stat.base}</span>
+              <span className='stats-number'>{stat.base}</span>
               <span>{stat.name}</span>
             </section>)
             )}
