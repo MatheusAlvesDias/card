@@ -11,7 +11,7 @@ const Navbar = ({search, setSearch, findPokemon}) => {
 
         <nav className="navbar">
             <div>
-                <img src="../../public/pokelogo.png" height='100' width='200' alt="pokemon.logo" />
+                <img src="public/pokelogo.png" height='100' width='200' alt="pokemon.logo" />
             </div>
             <div className='search-form'>
         <form onSubmit={findPokemon}>
