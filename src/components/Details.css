@@ -134,10 +134,12 @@
 
     
   
-  @media screen  and (max-width: 320px) {
+  @media screen  and (max-width: 375px) {
     
 
     .modal-body{
+      display: flex;
+      flex-direction: column;
         min-width: 300px;
       }
       .modal-container {

@@ -6,15 +6,18 @@
     align-items: center;
     margin: 0 auto;
     gap: 3rem;
-    max-width: 1200px;
+    width: 100%;
 }
 .home {
-    min-height: 4000px;
+    min-height: 2000px;
 }
 
 .loading{
     text-align: center;
     padding: 2rem;
-    margin: 2rem;
-    font-size: 2rem;
+    margin-top: 2rem;
+    font-size: 5rem;
+    margin-bottom: 1700px;
 }
+
+
